@@ -39,8 +39,6 @@ namespace CheckDotNetVersion
             }
 
             System.Console.ReadLine();
-
-            //return display_framwork_name;
         }
     }
 }
