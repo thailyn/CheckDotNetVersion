@@ -10,9 +10,18 @@ namespace CheckDotNetVersion
             string path = @"SOFTWARE\Microsoft\NET Framework Setup\NDP";
             List<string> displayFrameworkName = new List<string>();
 
-            RegistryKey installedVersions = Registry.LocalMachine.OpenSubKey(path);
-            string[] versionNames = installedVersions.GetSubKeyNames();
+            RegistryKey installedVersions = null;
+            try
+            {
+                installedVersions = Registry.LocalMachine.OpenSubKey(path);
+            }
+            catch (System.Exception ex)
+            {
+                System.Console.WriteLine("Error: Failed to open registry sub key '" + path + "': " + ex.Message);
+                System.Environment.Exit(1);
+            }
 
+            string[] versionNames = installedVersions.GetSubKeyNames();
             for (int i = 1; i <= versionNames.Length - 1; i++)
             {
                 string versionName = versionNames[i].ToString();
