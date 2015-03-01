@@ -1,10 +1,18 @@
-﻿using Microsoft.Win32;
+﻿/*
+ * This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
+ * Unported License. To view a copy of this license, visit
+ * http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to
+ * Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+ * */
+using Microsoft.Win32;
 using System.Collections.Generic;
 
 namespace CheckDotNetVersion
 {
     class Program
     {
+        // Method to get information from registry based on Stack Overflow
+        // answer here: http://stackoverflow.com/a/15926268 .
         static void Main(string[] args)
         {
             string path = @"SOFTWARE\Microsoft\NET Framework Setup\NDP";
