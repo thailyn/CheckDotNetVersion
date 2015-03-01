@@ -1,0 +1,6 @@
+Revision history for Check .NET Version
+
+1.0.0  Sat Feb 28 21:36:21 2015 -0500
+  New features:
+    - Initial release.  Gets the installed versions of .NET and prints out
+      basic information about them.  Hopefully doesn't crash.
